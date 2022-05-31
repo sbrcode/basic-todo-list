@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## What is it about ?
+
+just a simple test in React to practice
+
 ## Available Scripts
 
 In the project directory, you can run:
