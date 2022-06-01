@@ -11,6 +11,7 @@ const App = () => {
         value={label}
         type={"text"}
         onChange={(e) => setLabel(e.target.value)}
+        onFocus={() => setLabel("")}
       />
       <button
         onClick={() => {
@@ -21,7 +22,21 @@ const App = () => {
       </button>
       <ul>
         {todoList.length !== 0
-          ? todoList.map((todoTask, index) => <li key={index}>{todoTask}</li>)
+          ? todoList.map((todoTask, idTask) => (
+              <li key={idTask}>
+                {todoTask}
+                <button
+                  onClick={() => {
+                    const filtered = todoList.filter(
+                      (todoTask, idBtn) => idBtn !== idTask
+                    )
+                    setTodoList(filtered)
+                  }}
+                >
+                  X
+                </button>
+              </li>
+            ))
           : null}
       </ul>
     </div>
