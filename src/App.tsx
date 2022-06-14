@@ -30,6 +30,7 @@ const App = () => {
                     const filtered = todoList.filter(
                       (todoTask, idBtn) => idBtn !== idTask
                     )
+                    // console.log("todoTask: ", todoTask, "idTask: ", idTask)
                     setTodoList(filtered)
                   }}
                 >
@@ -39,6 +40,9 @@ const App = () => {
             ))
           : null}
       </ul>
+      {todoList.length > 1 && (
+        <button onClick={() => setTodoList([])}>Remove all Tasks</button>
+      )}
     </div>
   )
 }
