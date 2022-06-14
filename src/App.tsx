@@ -8,40 +8,50 @@ const App = () => {
   return (
     <div className="App">
       <input
+        className="Input"
         value={label}
         type={"text"}
-        onChange={(e) => setLabel(e.target.value)}
-        onFocus={() => setLabel("")}
+        autoFocus
+        maxLength={272}
+        onChange={(e) => {
+          e.preventDefault()
+          setLabel(e.target.value)
+        }}
       />
       <button
-        onClick={() => {
+        className="Btn"
+        onClick={(e) => {
+          e.preventDefault()
           if (label !== "") setTodoList([...todoList, label])
+          setLabel("")
         }}
       >
         add Task
       </button>
-      <ul>
-        {todoList.length !== 0
-          ? todoList.map((todoTask, idTask) => (
-              <li key={idTask}>
-                {todoTask}
-                <button
-                  onClick={() => {
-                    const filtered = todoList.filter(
-                      (todoTask, idBtn) => idBtn !== idTask
-                    )
-                    // console.log("todoTask: ", todoTask, "idTask: ", idTask)
-                    setTodoList(filtered)
-                  }}
-                >
-                  X
-                </button>
-              </li>
-            ))
-          : null}
-      </ul>
+      {todoList.length !== 0 && (
+        <ul className="Ul">
+          {todoList.map((todoTask, idTask) => (
+            <li className="Li" key={idTask}>
+              <button
+                className="Btn Del"
+                onClick={() => {
+                  const filtered = todoList.filter(
+                    (todoTask, idBtn) => idBtn !== idTask
+                  )
+                  setTodoList(filtered)
+                }}
+              >
+                X
+              </button>
+              {todoTask}
+            </li>
+          ))}
+        </ul>
+      )}
       {todoList.length > 1 && (
-        <button onClick={() => setTodoList([])}>Remove all Tasks</button>
+        <button className="Btn Del" onClick={() => setTodoList([])}>
+          Remove all Tasks
+        </button>
       )}
     </div>
   )

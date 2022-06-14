@@ -1,4 +1,54 @@
 .App {
-  text-align: center;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.Btn {
+  background-color: slateblue;
+  color: white;
+  margin: 5px;
+  padding-inline: 7px;
+  padding-block: 3px;
+  border-radius: 18px;
+  border-width: 4px;
+}
+.Btn:hover {
+  background-color: darkslateblue;
+  transition: 0.5s;
+}
+
+.Del {
+  background-color: lightcoral;
+}
+.Del:hover {
+  background-color: crimson;
+}
+
+.Ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.Li {
+  margin-block: 2px;
+  padding-right: 10px;
+  width: fit-content;
+  background-color: whitesmoke;
+  border-radius: 3px;
+}
+
+.Input {
+  border: none;
+  /* -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none; */
+  /* appearance: none; */
+  background-color: lightblue;
+  padding: 12px;
+  border-radius: 3px;
+  width: 20%;
+  font-size: 16px;
 }
 
