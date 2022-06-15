@@ -1,10 +1,11 @@
-import React from "react"
-import { render, screen } from "@testing-library/react"
+import { render, fireEvent, screen } from "@testing-library/react"
 import App from "./App"
 
-test("renders learn react link", () => {
+test("It should display input field", () => {
   render(<App />)
-  const linkElement = screen.getByText(/learn react/i)
-  expect(linkElement).toBeInTheDocument()
+  const input = screen.getByLabelText("input")
+  expect(input).toBeInTheDocument()
+  // fireEvent.change(input, { target: { value: "123" } })
+  // expect(input.value).toBeCalledWith("123")
 })
 
