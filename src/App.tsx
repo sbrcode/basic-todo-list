@@ -17,7 +17,6 @@ const App = () => {
           e.preventDefault()
           setLabel(e.target.value)
         }}
-        aria-label="input"
       />
       <button
         className="Btn"
